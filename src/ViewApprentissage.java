@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewApprentissage extends Application {
+    public static int Difficulté;
     @Override
     public void start(Stage stage) throws IOException {
         Scene scene=getScene();
@@ -17,6 +18,10 @@ public class ViewApprentissage extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(ViewApprentissage.class.getResource("apprentissage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         return scene;
+    }
+
+    public static int getDifficulté() {
+        return Difficulté;
     }
 
     public static <String> void main(String[] args) {

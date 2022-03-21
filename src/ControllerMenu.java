@@ -42,16 +42,25 @@ public class ControllerMenu {
     protected void onJouerContreIA() throws IOException {
         if (Facile.isSelected()){
             Difficulte.setVisible(false);
-            ViewApprentissage viewapprentissage= new ViewApprentissage();
-            viewapprentissage.start(stage);
+            System.out.println("facile");
+            ViewApprentissage viewApprentissage= new ViewApprentissage();
+            viewApprentissage.Difficulté=1;
+            System.out.println(viewApprentissage.Difficulté);
+            viewApprentissage.start(stage);
         }else if(Moyen.isSelected()){
             Difficulte.setVisible(false);
-            ViewApprentissage viewapprentissage= new ViewApprentissage();
-            viewapprentissage.start(stage);
+            System.out.println("moyen");
+            ViewApprentissage viewApprentissage= new ViewApprentissage();
+            viewApprentissage.Difficulté=2;
+            System.out.println(viewApprentissage.Difficulté);
+            viewApprentissage.start(stage);
         }else if (Difficile.isSelected()){
             Difficulte.setVisible(false);
-            ViewApprentissage viewapprentissage= new ViewApprentissage();
-            viewapprentissage.start(stage);
+            System.out.println("difficile");
+            ViewApprentissage viewApprentissage= new ViewApprentissage();
+            viewApprentissage.Difficulté=3;
+            System.out.println(viewApprentissage.Difficulté);
+            viewApprentissage.start(stage);
         }
         else {
             Difficulte.setVisible(true);
