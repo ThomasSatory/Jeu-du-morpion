@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMenu">
    <children>
-      <Button layoutX="43.0" layoutY="241.0" mnemonicParsing="false" prefHeight="80.0" fx:id="JouerContreHumain" prefWidth="180" text="Jouer contre un humain" onAction="#onJouerContreHumain">
+      <Button fx:id="JouerContreHumain" layoutX="43.0" layoutY="241.0" mnemonicParsing="false" onAction="#onJouerContreHumain" prefHeight="80.0" prefWidth="180" text="Jouer contre un humain" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
          </font></Button>
-      <Button layoutX="379.0" layoutY="241.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180" fx:id="JouerContreIA"  text="Jouer contre l'IA" textAlignment="CENTER" onAction="#onJouerContreIA">
+      <Button fx:id="JouerContreIA" layoutX="379.0" layoutY="241.0" mnemonicParsing="false" onAction="#onJouerContreIA" prefHeight="80.0" prefWidth="180" text="Jouer contre l'IA" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS" size="14.0" />
          </font></Button>
@@ -20,10 +20,24 @@
             <Font name="Comic Sans MS" size="31.0" />
          </font>
       </Text>
-      <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" text="Modele IA" fx:id="ModeleIA" onAction="#onModeleIA">
+      <Button fx:id="ModeleIA" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#onModeleIA" text="Modele IA">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
-      <Button layoutX="90.0" layoutY="16.0" mnemonicParsing="false" text="About" fx:id="About" onAction="#onAbout"/>
+      <Button fx:id="About" layoutX="90.0" layoutY="16.0" mnemonicParsing="false" onAction="#onAbout" text="About" />
+      <Text layoutX="315.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulté :" />
+      <RadioButton fx:id="Facile" layoutX="379.0" layoutY="330.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Facile" onAction="#onFacile"/>
+      <RadioButton fx:id="Moyen" layoutX="438.0" layoutY="330.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Moyen" onAction="#onMoyen" />
+      <RadioButton fx:id="Difficile" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" text="Difficile" onAction="#onDifficile"/>
+      <ImageView fitHeight="113.0" fitWidth="138.0" layoutX="70.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/ManVsMan.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="369.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/images/ManVsCpu.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 import ai.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import java.io.IOException;
