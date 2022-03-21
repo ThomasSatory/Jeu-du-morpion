@@ -26,9 +26,9 @@
          </font></Button>
       <Button fx:id="About" layoutX="90.0" layoutY="16.0" mnemonicParsing="false" onAction="#onAbout" text="About" />
       <Text layoutX="315.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Difficulté :" />
-      <RadioButton fx:id="Facile" layoutX="379.0" layoutY="330.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Facile" onAction="#onFacile"/>
-      <RadioButton fx:id="Moyen" layoutX="438.0" layoutY="330.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="63.0" text="Moyen" onAction="#onMoyen" />
-      <RadioButton fx:id="Difficile" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" text="Difficile" onAction="#onDifficile"/>
+      <RadioButton fx:id="Facile" layoutX="379.0" layoutY="330.0" mnemonicParsing="false" onAction="#onFacile" prefHeight="17.0" prefWidth="63.0" text="Facile" />
+      <RadioButton fx:id="Moyen" layoutX="438.0" layoutY="330.0" mnemonicParsing="false" onAction="#onMoyen" prefHeight="17.0" prefWidth="63.0" text="Moyen" />
+      <RadioButton fx:id="Difficile" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" onAction="#onDifficile" text="Difficile" />
       <ImageView fitHeight="113.0" fitWidth="138.0" layoutX="70.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/images/ManVsMan.png" />
@@ -39,5 +39,6 @@
             <Image url="@../resources/images/ManVsCpu.jpg" />
          </image>
       </ImageView>
+      <Label id="Difficulte" fx:id="Difficulte" layoutX="400.0" layoutY="88.0" prefHeight="17.0" prefWidth="200.0" text="Erreur" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

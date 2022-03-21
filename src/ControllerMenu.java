@@ -32,14 +32,31 @@ public class ControllerMenu {
     @FXML
     private RadioButton Difficile = new RadioButton("Difficile");
 
+    @FXML
+    private Label Difficulte = new Label();
 
     private Stage stage = new Stage();
 
 
     @FXML
     protected void onJouerContreIA() throws IOException {
-        ViewApprentissage viewapprentissage= new ViewApprentissage();
-        viewapprentissage.start(stage);
+        if (Facile.isSelected()){
+            Difficulte.setVisible(false);
+            ViewApprentissage viewapprentissage= new ViewApprentissage();
+            viewapprentissage.start(stage);
+        }else if(Moyen.isSelected()){
+            Difficulte.setVisible(false);
+            ViewApprentissage viewapprentissage= new ViewApprentissage();
+            viewapprentissage.start(stage);
+        }else if (Difficile.isSelected()){
+            Difficulte.setVisible(false);
+            ViewApprentissage viewapprentissage= new ViewApprentissage();
+            viewapprentissage.start(stage);
+        }
+        else {
+            Difficulte.setVisible(true);
+            Difficulte.setText("Veuillez choisir une difficulté");
+        }
     }
 
     @FXML

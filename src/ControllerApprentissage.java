@@ -58,7 +58,7 @@ public class ControllerApprentissage {
                 }
                 updateProgress(epochs,epochs);
                 updateMessage("Apprentissage fini !");
-                String file ="./ressources/models/MLP:256:0.1:2.srl";
+                String file ="@../resources/models/MLP:256:0,1:2.srl";
                 net.save(file);
                 return null;
             }
