@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMenu">
+   <children>
+      <Button layoutX="43.0" layoutY="241.0" mnemonicParsing="false" prefHeight="80.0" fx:id="JouerContreHumain" prefWidth="180" text="Jouer contre un humain" onAction="#onJouerContreHumain">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></Button>
+      <Button layoutX="379.0" layoutY="241.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180" fx:id="JouerContreIA"  text="Jouer contre l'IA" textAlignment="CENTER" onAction="#onJouerContreIA">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font></Button>
+      <Text layoutX="221.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jeu du Morpion" textAlignment="CENTER" wrappingWidth="158.0">
+         <font>
+            <Font name="Comic Sans MS" size="31.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" text="Modele IA" fx:id="ModeleIA" onAction="#onModeleIA">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+      <Button layoutX="90.0" layoutY="16.0" mnemonicParsing="false" text="About" fx:id="About" onAction="#onAbout"/>
+   </children>
+</AnchorPane>
