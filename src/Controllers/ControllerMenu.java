@@ -1,14 +1,12 @@
-import ai.*;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
+package Controllers;
+
+import Views.ViewAbout;
+import Views.ViewApprentissage;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.HashMap;
+
 
 public class ControllerMenu {
     @FXML
@@ -80,7 +78,8 @@ public class ControllerMenu {
 
     @FXML
     protected void onAbout() throws IOException {
-
+        ViewAbout viewAbout= new ViewAbout();
+        viewAbout.start(stage);
     }
 
     @FXML

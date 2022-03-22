@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMenu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerMenu">
    <children>
       <Button fx:id="JouerContreHumain" layoutX="43.0" layoutY="241.0" mnemonicParsing="false" onAction="#onJouerContreHumain" prefHeight="80.0" prefWidth="180" text="Jouer contre un humain" textAlignment="CENTER">
          <font>
@@ -31,12 +31,12 @@
       <RadioButton fx:id="Difficile" layoutX="501.0" layoutY="330.0" mnemonicParsing="false" onAction="#onDifficile" text="Difficile" />
       <ImageView fitHeight="113.0" fitWidth="138.0" layoutX="70.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/images/ManVsMan.png" />
+            <Image url="@../../resources/images/ManVsMan.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="369.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/images/ManVsCpu.jpg" />
+            <Image url="@../../resources/images/ManVsCpu.jpg" />
          </image>
       </ImageView>
       <Label id="Difficulte" fx:id="Difficulte" layoutX="400.0" layoutY="88.0" prefHeight="17.0" prefWidth="200.0" text="Erreur" textAlignment="CENTER" textFill="RED" />

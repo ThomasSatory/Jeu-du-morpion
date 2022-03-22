@@ -1,3 +1,6 @@
+package Controllers;
+
+import Views.ViewApprentissage;
 import ai.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -31,7 +34,7 @@ public class ControllerApprentissage {
             @Override
             protected Double call() throws Exception {
                 HashMap<Integer, Coup> mapTrain = Test.loadCoupsFromFile("./resources/train_dev_test/train.txt");
-                double epochs = 100000 ;
+                double epochs = 10000 ;
                 double error= 0.0;
                 boolean verbose =true;
                 int size = 9;
@@ -71,7 +74,7 @@ public class ControllerApprentissage {
                     while (c == null)
                         c = mapTrain.get((int) (Math.round(Math.random() * mapTrain.size())));
                     error += net.backPropagate(c.in, c.out);
-                    if (i % 10000 == 0 && verbose) {
+                    if (i % 1000 == 0 && verbose) {
                         updateMessage("Error at step " + i +" is "+ (error/(double)i));
                     }
                     if (i % 100 == 0 && verbose){

@@ -1,3 +1,5 @@
+package Views;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +17,7 @@ public class ViewApprentissage extends Application {
     }
 
     public Scene getScene() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ViewApprentissage.class.getResource("apprentissage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ViewApprentissage.class.getResource("fxmls/apprentissage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         return scene;
     }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerModeleia">
+   <children>
+      <ListView layoutX="113.0" layoutY="115.0" prefHeight="200.0" prefWidth="374.0" fx:id="Liste"/>
+      <Text layoutX="177.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste de tous les modéles de l'IA">
+         <font>
+            <Font name="Comic Sans MS" size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="264.0" layoutY="336.0" mnemonicParsing="false" text="Supprimer" fx:id="Supprimer" onAction="onSupprimer"/>
+      <Label layoutX="252.0" layoutY="88.0" prefHeight="17.0" prefWidth="96.0" text="Il y a n fichiers" fx:id="nbfichiers"/>
+   </children>
+</AnchorPane>
