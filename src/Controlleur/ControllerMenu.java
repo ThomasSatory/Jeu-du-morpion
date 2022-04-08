@@ -1,7 +1,8 @@
-package Controllers;
+package Controlleur;
 
-import Views.ViewAbout;
-import Views.ViewApprentissage;
+import Vue.ViewAbout;
+import Vue.ViewApprentissage;
+import Vue.ViewModeleia;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -73,7 +74,8 @@ public class ControllerMenu {
 
     @FXML
     protected void onModeleIA() throws IOException  {
-
+        ViewModeleia viewModeleia = new ViewModeleia();
+        viewModeleia.start(stage);
     }
 
     @FXML

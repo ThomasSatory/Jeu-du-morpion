@@ -1,4 +1,4 @@
-package Controllers;
+package Controlleur;
 
 public class ControllerAbout {
 

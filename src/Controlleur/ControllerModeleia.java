@@ -1,21 +1,19 @@
-package Controllers;
+package Controlleur;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
 
 import javax.swing.text.Element;
 import javax.swing.text.html.ListView;
 import java.awt.*;
 import java.io.*;
-import java.util.List;
 
 public class ControllerModeleia {
     @FXML
     Label nbfichiers = new Label();
 
-    protected void onStart() {
+    protected ListView onStart() {
         File repertoire = new File("resources/models");
         String liste[] = repertoire.list();
         int n = liste.length;
@@ -28,6 +26,7 @@ public class ControllerModeleia {
             }
         }
         ListView listView=new ListView((Element) ListFichiers);
+        return listView;
     }
 
     protected void onSupprimer(){

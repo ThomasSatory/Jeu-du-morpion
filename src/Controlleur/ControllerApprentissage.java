@@ -1,6 +1,6 @@
-package Controllers;
+package Controlleur;
 
-import Views.ViewApprentissage;
+import Vue.ViewApprentissage;
 import ai.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
