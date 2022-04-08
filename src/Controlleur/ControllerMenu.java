@@ -1,8 +1,6 @@
 package Controlleur;
 
-import Vue.ViewAbout;
-import Vue.ViewApprentissage;
-import Vue.ViewModeleia;
+import Vue.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -69,7 +67,8 @@ public class ControllerMenu {
 
     @FXML
     protected void onJouerContreHumain() throws IOException{
-
+        ViewjeuContreHumain viewjeuContreHumain = new ViewjeuContreHumain();
+        viewjeuContreHumain.start(stage);
     }
 
     @FXML
@@ -77,6 +76,13 @@ public class ControllerMenu {
         ViewModeleia viewModeleia = new ViewModeleia();
         viewModeleia.start(stage);
     }
+
+    @FXML
+    protected void onConfiguration() throws IOException  {
+        ViewModeleConfig viewModeleConfig = new ViewModeleConfig();
+        viewModeleConfig.start(stage);
+    }
+
 
     @FXML
     protected void onAbout() throws IOException {
