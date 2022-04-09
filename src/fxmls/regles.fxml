@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerRegles">
+   <children>
+      <Text layoutX="224.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regles du Morpion">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="126.0" layoutY="123.0" prefHeight="200.0" prefWidth="348.0" text="Le but du jeu est d’aligner avant son adversaire 3 symboles &#10;identiques horizontalement, verticalement ou en diagonale. &#10;Chaque joueur a donc son propre symbole, généralement une &#10;croix pour l’un et un rond pour l’autre.&#10;&#10;Un premier joueur dessine ( ou pose ) son symbole sur une case. &#10;Puis c'est au tour de l'autre joueur de dessiner ( ou de poser ) &#10;son symbole sur la case vide de son choix. Et ainsi de suite.&#10;&#10;Le premier joueur à aligner 3 symboles identiques gagne la &#10;partie et marque 1 point. Si la grille est complétée sans&#10;vainqueur, la partie est finie et il y a égalité.">
+         <font>
+            <Font name="Comic Sans MS" size="11.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

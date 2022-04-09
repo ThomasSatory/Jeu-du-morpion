@@ -169,6 +169,11 @@ public class ControllerMenu {
         viewModeleConfig.start(stage);
     }
 
+    @FXML
+    protected void onRegles() throws IOException {
+
+    }
+
 
     @FXML
     protected void onAbout() throws IOException {

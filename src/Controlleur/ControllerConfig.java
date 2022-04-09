@@ -1,16 +1,10 @@
 package Controlleur;
 
-import Vue.ViewModeleConfig;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 
-import javax.swing.*;
-import javax.swing.text.Element;
-import javax.swing.text.html.ListView;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

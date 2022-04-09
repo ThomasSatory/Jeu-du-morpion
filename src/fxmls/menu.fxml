@@ -41,6 +41,7 @@
             <items>
               <MenuItem fx:id="modeleia" mnemonicParsing="false" onAction="#onModeleIA" text="Modele IA" />
                 <MenuItem fx:id="config" mnemonicParsing="false" onAction="#onConfiguration" text="Configuration" />
+                <MenuItem fx:id="regles" mnemonicParsing="false" onAction="#onRegles" text="Regles" />
                 <MenuItem fx:id="about" mnemonicParsing="false" onAction="#onAbout" text="About" />
               </items>
           </Menu>
