@@ -29,6 +29,7 @@
       <RadioButton fx:id="Facile" layoutX="18.0" layoutY="288.0" mnemonicParsing="false" onAction="#onFacile" prefHeight="17.0" prefWidth="63.0" text="Facile" />
       <RadioButton fx:id="Moyen" layoutX="77.0" layoutY="288.0" mnemonicParsing="false" onAction="#onMoyen" prefHeight="17.0" prefWidth="63.0" text="Moyen" />
       <RadioButton fx:id="Difficile" layoutX="140.0" layoutY="288.0" mnemonicParsing="false" onAction="#onDifficile" text="Difficile" />
-      <ListView layoutX="127.0" layoutY="67.0" prefHeight="133.0" prefWidth="347.0" fx:id="liste"/>
+      <ListView fx:id="liste" layoutX="127.0" layoutY="67.0" prefHeight="133.0" prefWidth="347.0" />
+      <Label id="Notif" fx:id="Notif" layoutX="208.0" layoutY="369.0" prefHeight="17.0" prefWidth="185.0" text="Notif" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>
