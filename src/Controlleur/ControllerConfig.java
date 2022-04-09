@@ -31,10 +31,6 @@ public class ControllerConfig {
     private TextField lr = new TextField();
 
     @FXML
-    public ChoiceBox difficulte = new ChoiceBox(FXCollections.observableArrayList(
-            "Facile", "Moyen", "Difficile"));
-
-    @FXML
     private Button changer = new Button();
 
     @FXML
@@ -48,6 +44,16 @@ public class ControllerConfig {
 
     @FXML
     private Label  Notif = new Label();
+
+    @FXML
+    private Label  ConfigFacile = new Label();
+
+    @FXML
+    private Label  ConfigMoyen = new Label();
+
+    @FXML
+    private Label  ConfigDifficile = new Label();
+
 
     @FXML
     protected void onChanger() throws IOException {
@@ -108,14 +114,16 @@ public class ControllerConfig {
             Notif.setText("Changement effectué");
         }
         bw.close();
+        showConfigs();
     }
 
-    protected ListView onStart() throws IOException {
+    public void showConfigs() throws IOException {
         Path path = Paths.get("resources/config.txt");
         List<String> lines = Files.readAllLines(path);
-        ObservableList<String> linesbis = FXCollections.observableArrayList(lines);
-        ListView Liste = new ListView((Element) linesbis);
-        return Liste ;
+
+        ConfigFacile.setText(lines.get(0));
+        ConfigMoyen.setText(lines.get(1));
+        ConfigDifficile.setText(lines.get(2));
     }
 
     @FXML

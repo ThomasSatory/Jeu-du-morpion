@@ -1,13 +1,20 @@
 package Controlleur;
 
 import Vue.ViewApprentissage;
+import Vue.ViewjeuContreIA;
 import ai.*;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 
 public class ControllerApprentissage {
     @FXML
@@ -23,6 +30,8 @@ public class ControllerApprentissage {
     private TextField console = new TextField();
 
     public Task<Double> task;
+
+    private Stage stage = new Stage();
 
     @FXML
     protected void onHelloButtonClick() throws IOException {
@@ -45,22 +54,35 @@ public class ControllerApprentissage {
                 int Difficulté = ViewApprentissage.getDifficulté();
 
                 System.out.println(Difficulté);
+
+                Path path = Paths.get("resources/config.txt");
+                List<String> lines = Files.readAllLines(path);
+
                 if (Difficulté==1){
-                    l = 2;//nb de couches
-                    h =256; //nb de neuronnes
-                    lr = 0.1;
+                    String mode=lines.get(0);
+                    String modesplitted[]=mode.split(":");
+                    h=Integer.parseInt(modesplitted[1]);
+                    lr=Double.parseDouble(modesplitted[2]);
+                    l=Integer.parseInt(modesplitted[3]);
                 }else if (Difficulté==2){
-                    l = 2;
-                    h = 512;
-                    lr=0.01;
+                    String mode=lines.get(1);
+                    String modesplitted[]=mode.split(":");
+                    h=Integer.parseInt(modesplitted[1]);
+                    lr=Double.parseDouble(modesplitted[2]);
+                    l=Integer.parseInt(modesplitted[3]);
+                    System.out.println(l+" "+lr+" "+h);
                 }else if (Difficulté==3){
-                    l = 3;
-                    h = 1024;
-                    lr=0.001;
+                    String mode=lines.get(2);
+                    String modesplitted[]=mode.split(":");
+                    h=Integer.parseInt(modesplitted[1]);
+                    lr=Double.parseDouble(modesplitted[2]);
+                    l=Integer.parseInt(modesplitted[3]);
                 }else{//mode facile par defaut
-                    l = 2;//nb de couches
-                    h =256; //nb de neuronnes
-                    lr = 0.1;
+                    String mode=lines.get(0);
+                    String modesplitted[]=mode.split(":");
+                    h=Integer.parseInt(modesplitted[1]);
+                    lr=Double.parseDouble(modesplitted[2]);
+                    l=Integer.parseInt(modesplitted[3]);
                 }
                 int[] layers = new int[l+2];
                 layers[0] = size ;

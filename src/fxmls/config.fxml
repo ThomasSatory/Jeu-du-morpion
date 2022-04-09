@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerConfig">
+<AnchorPane prefHeight="367.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerConfig">
    <children>
       <TextField fx:id="h" layoutX="218.0" layoutY="284.0" prefHeight="25.0" prefWidth="50.0" />
       <TextField fx:id="lr" layoutX="332.0" layoutY="284.0" prefHeight="25.0" prefWidth="50.0" />
@@ -15,7 +15,10 @@
             <Font name="Comic Sans MS" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="187.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisi de modifier les modes de difficultés" />
+      <Text layoutX="197.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modification des Configurations">
+         <font>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Text>
       <Text layoutX="183.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de neuronnes">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
@@ -29,7 +32,24 @@
       <RadioButton fx:id="Facile" layoutX="18.0" layoutY="288.0" mnemonicParsing="false" onAction="#onFacile" prefHeight="17.0" prefWidth="63.0" text="Facile" />
       <RadioButton fx:id="Moyen" layoutX="77.0" layoutY="288.0" mnemonicParsing="false" onAction="#onMoyen" prefHeight="17.0" prefWidth="63.0" text="Moyen" />
       <RadioButton fx:id="Difficile" layoutX="140.0" layoutY="288.0" mnemonicParsing="false" onAction="#onDifficile" text="Difficile" />
-      <ListView fx:id="liste" layoutX="127.0" layoutY="67.0" prefHeight="133.0" prefWidth="347.0" />
-      <Label id="Notif" fx:id="Notif" layoutX="208.0" layoutY="369.0" prefHeight="17.0" prefWidth="185.0" text="Notif" textAlignment="CENTER" textFill="RED" />
+      <Label layoutX="145.0" layoutY="72.0" text="Facile :">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="141.0" layoutY="113.0" text="Moyen :">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="133.0" layoutY="154.0" text="Difficile :">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font></Label>
+      <Label fx:id="ConfigFacile" layoutX="268.0" layoutY="77.0" prefHeight="17.0" prefWidth="122.0" text="ConfigFacile" />
+      <Label fx:id="ConfigMoyen" layoutX="268.0" layoutY="118.0" prefHeight="17.0" prefWidth="122.0" text="ConfigMoyen" />
+      <Label fx:id="ConfigDifficile" layoutX="268.0" layoutY="159.0" prefHeight="17.0" prefWidth="122.0" text="ConfigDifficile" />
+      <Button layoutX="411.0" layoutY="114.0" mnemonicParsing="false" onAction="#showConfigs" text="Afficher les configurations" />
+      <Label id="Notif" fx:id="Notif" layoutX="349.0" layoutY="333.0" prefHeight="17.0" prefWidth="224.0" text="Notif" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

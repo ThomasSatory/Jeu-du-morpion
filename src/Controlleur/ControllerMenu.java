@@ -1,10 +1,18 @@
 package Controlleur;
 
 import Vue.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 
 
 public class ControllerMenu {
@@ -37,33 +45,111 @@ public class ControllerMenu {
 
     @FXML
     protected void onJouerContreIA() throws IOException {
+        Path path = Paths.get("resources/config.txt");
+        List<String> lines = Files.readAllLines(path);
+        int h , l;
+        double lr;
+
+
         if (Facile.isSelected()){
+            String mode=lines.get(0);
+            String modesplitted[]=mode.split(":");
+            h=Integer.parseInt(modesplitted[1]);
+            lr=Double.parseDouble(modesplitted[2]);
+            System.out.println(modesplitted[3]);
+            l=Integer.parseInt(modesplitted[3]);
+
             Difficulte.setVisible(false);
             System.out.println("facile");
-            ViewApprentissage viewApprentissage= new ViewApprentissage();
-            viewApprentissage.Difficulté=1;
-            System.out.println(viewApprentissage.Difficulté);
-            viewApprentissage.start(stage);
+            if (VerifConfig(h,lr,l)){
+                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
+                viewjeuContreIA.start(stage);
+            }else{
+                ViewApprentissage viewApprentissage= new ViewApprentissage();
+                viewApprentissage.Difficulté=1;
+                System.out.println(viewApprentissage.Difficulté);
+                viewApprentissage.start(stage);
+            }
         }else if(Moyen.isSelected()){
+            String mode=lines.get(1);
+            String modesplitted[]=mode.split(":");
+            h=Integer.parseInt(modesplitted[1]);
+            lr=Double.parseDouble(modesplitted[2]);
+            l=Integer.parseInt(modesplitted[3]);
             Difficulte.setVisible(false);
             System.out.println("moyen");
-            ViewApprentissage viewApprentissage= new ViewApprentissage();
-            viewApprentissage.Difficulté=2;
-            System.out.println(viewApprentissage.Difficulté);
-            viewApprentissage.start(stage);
+            if (VerifConfig(h,lr,l)){
+                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
+                viewjeuContreIA.start(stage);
+            } else {
+                ViewApprentissage viewApprentissage= new ViewApprentissage();
+                viewApprentissage.Difficulté=2;
+                System.out.println(viewApprentissage.Difficulté);
+                viewApprentissage.start(stage);
+            }
+
+
         }else if (Difficile.isSelected()){
+            String mode=lines.get(2);
+            String modesplitted[]=mode.split(":");
+            h=Integer.parseInt(modesplitted[1]);
+            lr=Double.parseDouble(modesplitted[2]);
+            l=Integer.parseInt(modesplitted[3]);
             Difficulte.setVisible(false);
             System.out.println("difficile");
-            ViewApprentissage viewApprentissage= new ViewApprentissage();
-            viewApprentissage.Difficulté=3;
-            System.out.println(viewApprentissage.Difficulté);
-            viewApprentissage.start(stage);
+            if (VerifConfig(h,lr,l)){
+                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
+                viewjeuContreIA.start(stage);
+            } else {
+                ViewApprentissage viewApprentissage= new ViewApprentissage();
+                viewApprentissage.Difficulté=3;
+                System.out.println(viewApprentissage.Difficulté);
+                viewApprentissage.start(stage);
+            }
         }
         else {
             Difficulte.setVisible(true);
             Difficulte.setText("Veuillez choisir une difficulté");
         }
     }
+
+    protected boolean VerifConfig(int h,double lr,int l) throws IOException {
+        List ListeFichiers=FichiersConfig();
+
+        int n=ListeFichiers.size();
+
+        for (int i=0 ; i<n ;i++){
+            String LigneFacile= (String) ListeFichiers.get(i);//recuperation des valeurs des differentes configurations
+            String[] LigneFacileSplitted=LigneFacile.split("-");
+
+
+            int hModel=Integer.parseInt(LigneFacileSplitted[1]);
+            double lrModel=Double.parseDouble(LigneFacileSplitted[2]);
+            String SlModel=LigneFacileSplitted[3];
+            SlModel=SlModel.replace(".srl","");
+            int lModel=Integer.parseInt(SlModel);
+
+            if ((hModel==h)&&(lrModel==lr)&&(lModel==l)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    protected List FichiersConfig() throws IOException {
+        File repertoire = new File("resources/models");
+        String[] liste = repertoire.list();
+        int n = liste.length;
+        List<String> ListFichiers = null;
+        if (n != 0) {
+            ListFichiers = FXCollections.observableArrayList();
+            for (int i = 0; i < n; i++) {
+                ListFichiers.add(liste[i]);
+            }
+        }
+        return ListFichiers;
+    }
+
 
     @FXML
     protected void onJouerContreHumain() throws IOException{
