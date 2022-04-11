@@ -554,6 +554,7 @@ public class ControllerjeuContreHumain {
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Jeu contre IA");
         stage.show();
     }
 
@@ -564,6 +565,7 @@ public class ControllerjeuContreHumain {
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Menu Pricipal");
         stage.show();
     }
 }

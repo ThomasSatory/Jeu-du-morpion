@@ -3,6 +3,7 @@ package Controlleur;
 import Vue.ViewApprentissage;
 
 import Vue.ViewjeuContreHumain;
+import Vue.ViewjeuContreIA;
 import ai.*;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -113,10 +114,11 @@ public class ControllerApprentissage {
                 updateMessage("Apprentissage fini !");
                 String file ="resources/models/MLP-"+h+"-"+lr+"-"+l+".srl";
                 net.save(file);
-                Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreIA.fxml"));
+                Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
                 stage.setScene(scene);
+                stage.setTitle("Jeu Contre IA");
                 stage.show();
                 return null;
             }

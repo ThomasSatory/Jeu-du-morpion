@@ -78,11 +78,13 @@ public class ControllerMenu {
                 Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Jeu contre IA");
             }else{
                 ViewApprentissage.Difficulté=1;
                 Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Apprentissage");
             }
             stage.setScene(scene);
             stage.show();
@@ -100,11 +102,13 @@ public class ControllerMenu {
                 Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Jeu contre IA");
             } else {
                 ViewApprentissage.Difficulté=2;
                 Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Apprentissage");
             }
             stage.setScene(scene);
             stage.show();
@@ -122,11 +126,13 @@ public class ControllerMenu {
                 Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Jeu contre IA");
             } else {
                 ViewApprentissage.Difficulté=3;
                 Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
                 stage= (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene=new Scene(root);
+                stage.setTitle("Apprentissage");
             }
             stage.setScene(scene);
             stage.show();
@@ -180,6 +186,7 @@ public class ControllerMenu {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreHumain.fxml"));
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
+        stage.setTitle("1v1");
         stage.setScene(scene);
         stage.show();
     }
@@ -193,6 +200,7 @@ public class ControllerMenu {
 
         Stage window = (Stage)anchorpane.getScene().getWindow();
 
+        window.setTitle("Modeles IA");
         window.setScene(ReportManagerScene);
 
         window.show();
@@ -207,6 +215,7 @@ public class ControllerMenu {
 
         Stage window = (Stage)anchorpane.getScene().getWindow();
 
+        window.setTitle("Configurations");
         window.setScene(ReportManagerScene);
 
         window.show();
@@ -221,6 +230,7 @@ public class ControllerMenu {
 
         Stage window = (Stage)anchorpane.getScene().getWindow();
 
+        window.setTitle("Regles");
         window.setScene(ReportManagerScene);
 
         window.show();
@@ -236,6 +246,7 @@ public class ControllerMenu {
 
         Stage window = (Stage)anchorpane.getScene().getWindow();
 
+        window.setTitle("About");
         window.setScene(ReportManagerScene);
 
         window.show();
@@ -250,6 +261,7 @@ public class ControllerMenu {
 
         Stage window = (Stage)anchorpane.getScene().getWindow();
 
+        window.setTitle("Help");
         window.setScene(ReportManagerScene);
 
         window.show();
