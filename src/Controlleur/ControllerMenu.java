@@ -171,7 +171,8 @@ public class ControllerMenu {
 
     @FXML
     protected void onRegles() throws IOException {
-
+        ViewRegles viewRegles = new ViewRegles();
+        viewRegles.start(stage);
     }
 
 
@@ -180,6 +181,13 @@ public class ControllerMenu {
         ViewAbout viewAbout= new ViewAbout();
         viewAbout.start(stage);
     }
+
+    @FXML
+    protected void onHelp() throws IOException {
+        ViewRegles viewRegles = new ViewRegles();
+        viewRegles.start(stage);
+    }
+
 
     @FXML
     protected void onFacile() throws IOException{ //pour disable les autres difficultées

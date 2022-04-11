@@ -19,8 +19,6 @@ public class ViewModeleConfig extends Application {
         Notif.setVisible(false);
         stage.setScene(scene);
         stage.show();
-        ControllerConfig controllerConfig = new ControllerConfig();
-        controllerConfig.showConfigs();
     }
     public static <String> void main(String[] args) {
         launch();

@@ -18,6 +18,10 @@ public class ControllerModeleia {
     @FXML
     private Label Notif= new Label();
 
+    public void initialize(){
+        ShowMLPs();
+    }
+
     @FXML
     protected void ShowMLPs(){
         File repertoire = new File("resources/models");

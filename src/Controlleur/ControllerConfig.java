@@ -1,6 +1,7 @@
 package Controlleur;
 
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
@@ -40,13 +41,23 @@ public class ControllerConfig {
     private Label  Notif = new Label();
 
     @FXML
-    private Label  ConfigFacile = new Label();
+    private ListView<String> MLP = new ListView<String>();
+
+
+
+    public void initialize() throws IOException {
+        ShowMLPs();
+    }
+
 
     @FXML
-    private Label  ConfigMoyen = new Label();
-
-    @FXML
-    private Label  ConfigDifficile = new Label();
+    protected void ShowMLPs() throws IOException {
+        Path path = Paths.get("resources/config.txt");
+        List<String> lines = Files.readAllLines(path);
+        MLP.setItems(FXCollections.observableArrayList());
+        MLP.getItems().addAll(lines);
+        MLP.refresh();
+    }
 
 
     @FXML
@@ -108,17 +119,9 @@ public class ControllerConfig {
             Notif.setText("Changement effectué");
         }
         bw.close();
-        showConfigs();
+        ShowMLPs();
     }
 
-    public void showConfigs() throws IOException {
-        Path path = Paths.get("resources/config.txt");
-        List<String> lines = Files.readAllLines(path);
-
-        ConfigFacile.setText(lines.get(0));
-        ConfigMoyen.setText(lines.get(1));
-        ConfigDifficile.setText(lines.get(2));
-    }
 
     @FXML
     protected void onFacile() throws IOException{ //pour disable les autres difficultées

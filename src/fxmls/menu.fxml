@@ -35,7 +35,7 @@
          </image>
       </ImageView>
       <Label id="Difficulte" fx:id="Difficulte" layoutX="400.0" layoutY="88.0" prefHeight="17.0" prefWidth="200.0" text="Erreur" textAlignment="CENTER" textFill="RED" />
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="63.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="108.0">
         <menus>
           <Menu mnemonicParsing="false" text="Menu">
             <items>
@@ -45,6 +45,11 @@
                 <MenuItem fx:id="about" mnemonicParsing="false" onAction="#onAbout" text="About" />
               </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem fx:id="help" mnemonicParsing="false" onAction="#onHelp" text="Help" />
+                </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>
