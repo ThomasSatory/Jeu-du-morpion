@@ -1,14 +1,18 @@
 package Controlleur;
 
 import Vue.ViewApprentissage;
-import Vue.ViewjeuContreIA;
+
+import Vue.ViewjeuContreHumain;
 import ai.*;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,10 +35,12 @@ public class ControllerApprentissage {
 
     public Task<Double> task;
 
-    private Stage stage = new Stage();
+    private Stage stage;
+    private Scene scene;
+
 
     @FXML
-    protected void onHelloButtonClick() throws IOException {
+    protected void onHelloButtonClick(ActionEvent event) throws IOException {
         startText.setText("Apprentissage en cours");
         Boston.setText("Lancer l'apprentissage");
         Boston.setVisible(false);
@@ -107,6 +113,11 @@ public class ControllerApprentissage {
                 updateMessage("Apprentissage fini !");
                 String file ="resources/models/MLP-"+h+"-"+lr+"-"+l+".srl";
                 net.save(file);
+                Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreIA.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                stage.setScene(scene);
+                stage.show();
                 return null;
             }
         };

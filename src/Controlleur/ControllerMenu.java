@@ -3,8 +3,14 @@ package Controlleur;
 import Vue.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -40,11 +46,18 @@ public class ControllerMenu {
     @FXML
     private Label Difficulte = new Label();
 
-    private Stage stage = new Stage();
+    @FXML
+    private AnchorPane anchorpane = new AnchorPane();
 
+    private Stage stage ;
+    private Scene scene ;
+
+    public void initialize(){
+        Difficulte.setVisible(false);
+    }
 
     @FXML
-    protected void onJouerContreIA() throws IOException {
+    protected void onJouerContreIA(ActionEvent event) throws IOException {
         Path path = Paths.get("resources/config.txt");
         List<String> lines = Files.readAllLines(path);
         int h , l;
@@ -62,15 +75,20 @@ public class ControllerMenu {
             Difficulte.setVisible(false);
             System.out.println("facile");
             if (VerifConfig(h,lr,l)){
-                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
-                viewjeuContreIA.start(stage);
+                Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             }else{
-                ViewApprentissage viewApprentissage= new ViewApprentissage();
-                viewApprentissage.Difficulté=1;
-                System.out.println(viewApprentissage.Difficulté);
-                viewApprentissage.start(stage);
+                ViewApprentissage.Difficulté=1;
+                Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             }
-        }else if(Moyen.isSelected()){
+            stage.setScene(scene);
+            stage.show();
+        }
+
+        else if(Moyen.isSelected()){
             String mode=lines.get(1);
             String modesplitted[]=mode.split(":");
             h=Integer.parseInt(modesplitted[1]);
@@ -79,17 +97,20 @@ public class ControllerMenu {
             Difficulte.setVisible(false);
             System.out.println("moyen");
             if (VerifConfig(h,lr,l)){
-                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
-                viewjeuContreIA.start(stage);
+                Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             } else {
-                ViewApprentissage viewApprentissage= new ViewApprentissage();
-                viewApprentissage.Difficulté=2;
-                System.out.println(viewApprentissage.Difficulté);
-                viewApprentissage.start(stage);
+                ViewApprentissage.Difficulté=2;
+                Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             }
+            stage.setScene(scene);
+            stage.show();
+        }
 
-
-        }else if (Difficile.isSelected()){
+        else if (Difficile.isSelected()){
             String mode=lines.get(2);
             String modesplitted[]=mode.split(":");
             h=Integer.parseInt(modesplitted[1]);
@@ -98,14 +119,17 @@ public class ControllerMenu {
             Difficulte.setVisible(false);
             System.out.println("difficile");
             if (VerifConfig(h,lr,l)){
-                ViewjeuContreIA viewjeuContreIA = new ViewjeuContreIA();
-                viewjeuContreIA.start(stage);
+                Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             } else {
-                ViewApprentissage viewApprentissage= new ViewApprentissage();
-                viewApprentissage.Difficulté=3;
-                System.out.println(viewApprentissage.Difficulté);
-                viewApprentissage.start(stage);
+                ViewApprentissage.Difficulté=3;
+                Parent root = FXMLLoader.load(ViewApprentissage.class.getResource("../fxmls/apprentissage.fxml"));
+                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
             }
+            stage.setScene(scene);
+            stage.show();
         }
         else {
             Difficulte.setVisible(true);
@@ -152,40 +176,83 @@ public class ControllerMenu {
 
 
     @FXML
-    protected void onJouerContreHumain() throws IOException{
-        ViewjeuContreHumain viewjeuContreHumain = new ViewjeuContreHumain();
-        viewjeuContreHumain.start(stage);
+    protected void onJouerContreHumain(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreHumain.fxml"));
+        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    protected void onModeleIA() throws IOException  {
-        ViewModeleia viewModeleia = new ViewModeleia();
-        viewModeleia.start(stage);
+    protected void onModeleIA(ActionEvent event) throws IOException  {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmls/modeleia.fxml"));
+        Parent ReportManager = loader.load();
+        Scene ReportManagerScene = new Scene(ReportManager);
+
+        Stage window = (Stage)anchorpane.getScene().getWindow();
+
+        window.setScene(ReportManagerScene);
+
+        window.show();
     }
 
     @FXML
-    protected void onConfiguration() throws IOException  {
-        ViewModeleConfig viewModeleConfig = new ViewModeleConfig();
-        viewModeleConfig.start(stage);
+    protected void onConfiguration(ActionEvent event) throws IOException  {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmls/config.fxml"));
+        Parent ReportManager = loader.load();
+        Scene ReportManagerScene = new Scene(ReportManager);
+
+        Stage window = (Stage)anchorpane.getScene().getWindow();
+
+        window.setScene(ReportManagerScene);
+
+        window.show();
     }
 
     @FXML
-    protected void onRegles() throws IOException {
-        ViewRegles viewRegles = new ViewRegles();
-        viewRegles.start(stage);
+    protected void onRegles(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmls/regles.fxml"));
+        Parent ReportManager = loader.load();
+        Scene ReportManagerScene = new Scene(ReportManager);
+
+        Stage window = (Stage)anchorpane.getScene().getWindow();
+
+        window.setScene(ReportManagerScene);
+
+        window.show();
     }
 
 
     @FXML
-    protected void onAbout() throws IOException {
-        ViewAbout viewAbout= new ViewAbout();
-        viewAbout.start(stage);
+    protected void onAbout(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmls/about.fxml"));
+        Parent ReportManager = loader.load();
+        Scene ReportManagerScene = new Scene(ReportManager);
+
+        Stage window = (Stage)anchorpane.getScene().getWindow();
+
+        window.setScene(ReportManagerScene);
+
+        window.show();
     }
 
     @FXML
-    protected void onHelp() throws IOException {
-        ViewRegles viewRegles = new ViewRegles();
-        viewRegles.start(stage);
+    protected void onHelp(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxmls/regles.fxml"));
+        Parent ReportManager = loader.load();
+        Scene ReportManagerScene = new Scene(ReportManager);
+
+        Stage window = (Stage)anchorpane.getScene().getWindow();
+
+        window.setScene(ReportManagerScene);
+
+        window.show();
     }
 
 
