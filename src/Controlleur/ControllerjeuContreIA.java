@@ -328,6 +328,15 @@ public class ControllerjeuContreIA {
             tourdecider.setVisible(false);
             Retour.setVisible(true);
             Rejouer.setVisible(true);
+            NordOuest.setDisable(true);
+            Nord.setDisable(true);
+            NordEst.setDisable(true);
+            Ouest.setDisable(true);
+            Centre.setDisable(true);
+            Est.setDisable(true);
+            SudOuest.setDisable(true);
+            Sud.setDisable(true);
+            SudEst.setDisable(true);
             Fin.setText("Le Joueur 1 a gagné");
         }
         if (winplayer2 == true){
@@ -335,6 +344,15 @@ public class ControllerjeuContreIA {
             tourdecider.setVisible(false);
             Retour.setVisible(true);
             Rejouer.setVisible(true);
+            NordOuest.setDisable(true);
+            Nord.setDisable(true);
+            NordEst.setDisable(true);
+            Ouest.setDisable(true);
+            Centre.setDisable(true);
+            Est.setDisable(true);
+            SudOuest.setDisable(true);
+            Sud.setDisable(true);
+            SudEst.setDisable(true);
             Fin.setText("L'IA a gagné");
         }
         return false;

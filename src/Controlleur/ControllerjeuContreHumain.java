@@ -255,6 +255,16 @@ public class ControllerjeuContreHumain {
             Retour.setVisible(true);
             Rejouer.setVisible(true);
             fade2.stop();
+            fade1.play();
+            NordOuest.setDisable(true);
+            Nord.setDisable(true);
+            NordEst.setDisable(true);
+            Ouest.setDisable(true);
+            Centre.setDisable(true);
+            Est.setDisable(true);
+            SudOuest.setDisable(true);
+            Sud.setDisable(true);
+            SudEst.setDisable(true);
             Fin.setText("Le Joueur 1 a gagné");
         }
         if (winplayer2 == true){
@@ -263,6 +273,16 @@ public class ControllerjeuContreHumain {
             Retour.setVisible(true);
             Rejouer.setVisible(true);
             fade1.stop();
+            fade1.play();
+            NordOuest.setDisable(true);
+            Nord.setDisable(true);
+            NordEst.setDisable(true);
+            Ouest.setDisable(true);
+            Centre.setDisable(true);
+            Est.setDisable(true);
+            SudOuest.setDisable(true);
+            Sud.setDisable(true);
+            SudEst.setDisable(true);
             Fin.setText("Le Joueur 2 a gagné");
         }
     }
