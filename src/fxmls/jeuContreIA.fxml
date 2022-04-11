@@ -6,51 +6,66 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerjeuContreIA">
-   <children>
-      <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="127.0" layoutY="124.0" prefHeight="251.0" prefWidth="347.0">
-        <columnConstraints>
-          <ColumnConstraints fx:id="NordColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints fx:id="CenterColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints fx:id="SudColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints fx:id="OuestRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints fx:id="CentreRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints fx:id="EstRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button mnemonicParsing="false" onAction="#onNordOuest" prefHeight="88.0" prefWidth="120.0" />
-            <Button mnemonicParsing="false" onAction="#onNord" prefHeight="103.0" prefWidth="129.0" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#onNordEst" prefHeight="125.0" prefWidth="179.0" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#onOuest" prefHeight="109.0" prefWidth="152.0" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#onCentre" prefHeight="95.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#onEst" prefHeight="136.0" prefWidth="207.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#onSudOuest" prefHeight="119.0" prefWidth="126.0" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#onSud" prefHeight="162.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#onSudEst" prefHeight="95.0" prefWidth="128.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-         </children>
-      </GridPane>
-      <Label layoutX="138.0" layoutY="54.0" prefHeight="28.0" prefWidth="308.0" text="C'est au tour de " textAlignment="CENTER">
+    <children>
+        <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="127.0" layoutY="124.0" prefHeight="251.0" prefWidth="347.0">
+            <columnConstraints>
+                <ColumnConstraints fx:id="NordColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints fx:id="CenterColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints fx:id="SudColumn" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints fx:id="OuestRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="CentreRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints fx:id="EstRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="NordOuest" mnemonicParsing="false" onAction="#onNordOuest" prefHeight="88.0" prefWidth="120.0" />
+                <Button fx:id="Nord" mnemonicParsing="false" onAction="#onNord" prefHeight="103.0" prefWidth="129.0" GridPane.columnIndex="1" />
+                <Button fx:id="NordEst" mnemonicParsing="false" onAction="#onNordEst" prefHeight="125.0" prefWidth="179.0" GridPane.columnIndex="2" />
+                <Button fx:id="Ouest" mnemonicParsing="false" onAction="#onOuest" prefHeight="109.0" prefWidth="152.0" GridPane.rowIndex="1" />
+                <Button fx:id="Centre" mnemonicParsing="false" onAction="#onCentre" prefHeight="95.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button fx:id="Est" mnemonicParsing="false" onAction="#onEst" prefHeight="136.0" prefWidth="207.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button fx:id="SudOuest" mnemonicParsing="false" onAction="#onSudOuest" prefHeight="119.0" prefWidth="126.0" GridPane.rowIndex="2" />
+                <Button fx:id="Sud" mnemonicParsing="false" onAction="#onSud" prefHeight="162.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button fx:id="SudEst" mnemonicParsing="false" onAction="#onSudEst" prefHeight="95.0" prefWidth="128.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+        <Label fx:id="tourdecider" layoutX="204.0" layoutY="54.0" prefHeight="28.0" prefWidth="308.0" text="C'est au tour de " textAlignment="CENTER">
+            <font>
+                <Font name="Comic Sans MS" size="20.0" />
+            </font></Label>
+        <ImageView fitHeight="97.0" fitWidth="118.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/player1.png" />
+            </image></ImageView>
+        <ImageView fitHeight="97.0" fitWidth="118.0" layoutX="489.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/IA.jpg" />
+            </image></ImageView>
+        <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="14.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/cross.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="489.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/circle.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="Notification" layoutX="131.0" layoutY="99.0" prefHeight="18.0" prefWidth="347.0" text="Label" textAlignment="CENTER" textFill="RED">
+            <font>
+                <Font name="Comic Sans MS" size="12.0" />
+            </font>
+        </Label>
+        <Button fx:id="Retour" layoutX="149.0" layoutY="55.0" mnemonicParsing="false" onAction="#onRetour" prefHeight="55.0" prefWidth="109.0" text="Retour au menu">
          <font>
-            <Font name="Comic Sans MS" size="20.0" />
-         </font></Label>
-      <ImageView fitHeight="97.0" fitWidth="118.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../resources/images/player1.png" />
-         </image></ImageView>
-      <ImageView fitHeight="97.0" fitWidth="118.0" layoutX="489.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../resources/images/IA.jpg" />
-         </image></ImageView>
-      <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="14.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../resources/images/cross.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="489.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../resources/images/circle.png" />
-         </image>
-      </ImageView>
-   </children>
+            <Font name="Comic Sans MS" size="12.0" />
+         </font></Button>
+        <Button fx:id="Rejouer" layoutX="337.0" layoutY="55.0" mnemonicParsing="false" onAction="#onRejouer" prefHeight="55.0" prefWidth="109.0" text="Rejouer" />
+        <Label fx:id="Fin" layoutX="204.0" layoutY="19.0" prefHeight="28.0" prefWidth="347.0" text="a gagné" textAlignment="CENTER">
+            <font>
+                <Font name="Comic Sans MS" size="20.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

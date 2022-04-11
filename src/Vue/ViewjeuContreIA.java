@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewjeuContreIA extends Application {
+    public static int Difficulte = 0;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreIA.fxml"));

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerModeleia">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
       <ListView fx:id="MLP" layoutX="39.0" layoutY="100.0" prefHeight="200.0" prefWidth="374.0" />
       <Text layoutX="177.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste de tous les modéles de l'IA">
          <font>
@@ -18,7 +20,7 @@
             <Font name="Comic Sans MS" size="19.0" />
          </font>
       </Label>
-      <Button layoutX="13.0" layoutY="14.0" mnemonicParsing="false" text="Retour" onAction="#onRetour">
+      <Button layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRetour" text="Retour">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font>
