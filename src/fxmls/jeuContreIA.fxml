@@ -57,7 +57,7 @@
                 <Font name="Comic Sans MS" size="12.0" />
             </font>
         </Label>
-        <Button fx:id="Retour" layoutX="149.0" layoutY="55.0" mnemonicParsing="false" onAction="#onRetour" prefHeight="55.0" prefWidth="109.0" text="Retour au menu">
+        <Button fx:id="Retour" layoutX="149.0" layoutY="55.0" mnemonicParsing="false" onAction="#onRetour" prefHeight="55.0" prefWidth="109.0" text="Retour au menu" textFill="#111111">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font></Button>
