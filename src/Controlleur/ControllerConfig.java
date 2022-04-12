@@ -85,17 +85,17 @@ public class ControllerConfig {
             float lrvalue = Float.parseFloat(lrtext);
 
             if (Facile.isSelected()){
-                lines.add(0,"F:"+hvalue+":"+lrvalue+":"+lvalue+" ");
+                lines.add(0,"F:"+hvalue+":"+lrvalue+":"+lvalue);
                 lines.remove(1);
             }
 
             else if (Moyen.isSelected()){
-                lines.add(1,"M:"+hvalue+":"+lrvalue+":"+lvalue+" ");
+                lines.add(1,"M:"+hvalue+":"+lrvalue+":"+lvalue);
                 lines.remove(2);
             }
 
             else if (Difficile.isSelected()){
-                lines.add(2,"D:"+hvalue+":"+lrvalue+":"+lvalue+" ");
+                lines.add(2,"D:"+hvalue+":"+lrvalue+":"+lvalue);
                 lines.remove(3);
             }
 

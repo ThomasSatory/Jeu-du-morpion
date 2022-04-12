@@ -6,19 +6,26 @@ import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,20 +38,14 @@ public class ControllerMenu {
     @FXML
     public Button stop;
 
+
+    @FXML
+    public Rectangle Humain;
+
+
+
     @FXML
     public Button play;
-
-    @FXML
-    private Button JouerContreIA = new Button();
-
-    @FXML
-    private Button JouerContreHumain = new Button();
-
-    @FXML
-    private Button ModeleIA = new Button();
-
-    @FXML
-    private Button About = new Button();
 
     @FXML
     private RadioButton Facile = new RadioButton("Facile");
@@ -83,12 +84,24 @@ public class ControllerMenu {
 
     public MediaPlayer mediaPlayer;
 
+    public int width=10;
+    public int height=30;
+
 
     public void initialize(){
         Difficulte.setVisible(false);
         Translation();
         stop.setVisible(false);
+        Image image2= new Image(getClass().getResourceAsStream("/images/mute.png"),width-10,height-6,true,true);
+        Image image= new Image(getClass().getResourceAsStream("/images/sound.png"),width-10,height-6,true,true);
+        play.setGraphic(new ImageView(image2));
+        stop.setGraphic(new ImageView(image));
     }
+
+    public void setButtons(ActionEvent event){
+
+    }
+
 
     public void Translation(){
         translate=new TranslateTransition(Duration.millis(2000), ghost);

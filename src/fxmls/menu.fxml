@@ -14,7 +14,7 @@
             <Image url="@../../resources/images/Grille_pac_man.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="113.0" layoutX="54.0" layoutY="107.0" strokeLineCap="ROUND" strokeType="INSIDE" width="236.0">
+      <Rectangle fx:id="Humain" arcHeight="5.0" arcWidth="5.0" height="113.0" layoutX="54.0" layoutY="107.0" strokeLineCap="ROUND" strokeType="INSIDE" width="236.0">
          <fill>
             <LinearGradient endX="0.6018957345971564" endY="0.23696682464454977" startX="0.42654028436018965" startY="0.6018957345971566">
                <stops>
@@ -47,7 +47,7 @@
                </stops>
             </LinearGradient>
          </stroke></Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="113.0" layoutX="305.0" layoutY="106.0" strokeType="INSIDE" width="236.0">
+      <Rectangle fx:id="IA" arcHeight="5.0" arcWidth="5.0" height="113.0" layoutX="305.0" layoutY="106.0" strokeType="INSIDE" width="236.0">
          <fill>
             <LinearGradient endX="0.6018957345971564" endY="0.23696682464454977" startX="0.42654028436018965" startY="0.6018957345971566">
                <stops>
@@ -183,11 +183,11 @@
             <Image url="@../../resources/images/ghost-pacman4.png" />
          </image>
       </ImageView>
-      <Button fx:id="play" onAction="#playMusique" layoutX="526.0" layoutY="15.0" mnemonicParsing="false" text="Musique" >
+      <Button fx:id="play" layoutX="526.0" layoutY="15.0" mnemonicParsing="false" onAction="#playMusique" prefHeight="26.0" prefWidth="62.0">
       <font>
          <Font name="Comic Sans MS" size="12.0" />
       </font></Button>
-      <Button fx:id="stop" onAction="#stopMusique" layoutX="526.0" layoutY="15.0" mnemonicParsing="false" text="Musique" >
+      <Button fx:id="stop" layoutX="526.0" layoutY="15.0" mnemonicParsing="false" onAction="#stopMusique" prefHeight="26.0" prefWidth="62.0">
          <font>
             <Font name="Comic Sans MS" size="12.0" />
          </font>

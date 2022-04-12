@@ -4,6 +4,7 @@ import Vue.ViewjeuContreHumain;
 import Vue.ViewjeuContreIA;
 import ai.MultiLayerPerceptron;
 import ai.SigmoidalTransferFunction;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -68,6 +70,13 @@ public class ControllerjeuContreIA {
     @FXML
     protected Button Retour = new Button();
 
+    @FXML
+    protected  ImageView ghost = new ImageView();
+
+
+    @FXML
+    protected  ImageView ghost2 = new ImageView();
+
     private Stage stage;
     private Scene scene;
 
@@ -84,6 +93,9 @@ public class ControllerjeuContreIA {
 
     public double[] sortieIA ;
 
+    public TranslateTransition translate;
+    public TranslateTransition translate2;
+
 
     public void initialize() throws IOException {
         GameBoard=FillGameBoard();
@@ -96,7 +108,22 @@ public class ControllerjeuContreIA {
         output=transformBoard();
         sortieIA=IAplay();
         AfficherSortieIA();
+        Transition();
         tourdecider.setText("C'est au tour du Joueur 1");
+    }
+
+    public void Transition(){
+        translate=new TranslateTransition(Duration.millis(2000), ghost);
+        translate.setByY(155.00);
+        translate.setAutoReverse(true);
+        translate.setCycleCount(30);
+        translate.play();
+
+        translate2=new TranslateTransition(Duration.millis(2000), ghost2);
+        translate2.setByY(155.00);
+        translate2.setAutoReverse(true);
+        translate2.setCycleCount(30);
+        translate2.play();
     }
 
     public double[] transformBoard(){

@@ -35,10 +35,17 @@ public class ControllerApprentissage {
     @FXML
     private TextField console = new TextField();
 
+    @FXML
+    private Button play = new Button();
+
     public Task<Double> task;
 
     private Stage stage;
     private Scene scene;
+
+    public void initialize(){
+        play.setVisible(false);
+    }
 
 
     @FXML
@@ -115,7 +122,7 @@ public class ControllerApprentissage {
                 updateMessage("Apprentissage fini !");
                 String file ="resources/models/MLP-"+h+"-"+lr+"-"+l+".srl";
                 net.save(file);
-                SwitchToGame(event);
+                play.setVisible(true);
                 return null;
             }
         };
