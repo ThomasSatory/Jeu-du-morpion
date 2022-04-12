@@ -1,6 +1,8 @@
 package Controlleur;
 
 import Vue.*;
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,8 +12,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,13 +53,58 @@ public class ControllerMenu {
     @FXML
     private AnchorPane anchorpane = new AnchorPane();
 
+    @FXML
+    private ImageView ghost = new ImageView();
+
+    @FXML
+    private ImageView ghost2 = new ImageView();
+
+    @FXML
+    private ImageView ghost3 = new ImageView();
+
+    @FXML
+    private ImageView ghost4 = new ImageView();
+
     private Stage stage ;
     private Scene scene ;
 
+    public TranslateTransition translate ;
+    public TranslateTransition translate2 ;
+    public TranslateTransition translate3 ;
+    public TranslateTransition translate4 ;
+
+
+
     public void initialize(){
         Difficulte.setVisible(false);
+        Translation();
     }
 
+    public void Translation(){
+        translate=new TranslateTransition(Duration.millis(2000), ghost);
+        translate.setByX(160.00);
+        translate.setAutoReverse(true);
+        translate.setCycleCount(30);
+        translate.play();
+
+        translate2=new TranslateTransition(Duration.millis(2000), ghost2);
+        translate2.setByX(-160.00);
+        translate2.setAutoReverse(true);
+        translate2.setCycleCount(30);
+        translate2.play();
+
+        translate3=new TranslateTransition(Duration.millis(2000), ghost3);
+        translate3.setByX(-160.00);
+        translate3.setAutoReverse(true);
+        translate3.setCycleCount(30);
+        translate3.play();
+
+        translate4=new TranslateTransition(Duration.millis(2000), ghost4);
+        translate4.setByX(160.00);
+        translate4.setAutoReverse(true);
+        translate4.setCycleCount(30);
+        translate4.play();
+    }
     @FXML
     protected void onJouerContreIA(ActionEvent event) throws IOException {
         Path path = Paths.get("resources/config.txt");

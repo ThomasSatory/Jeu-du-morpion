@@ -163,5 +163,25 @@
             <Image url="@../../resources/images/sus.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="ghost" fitHeight="25.0" fitWidth="23.0" layoutX="108.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/ghost-pacman.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ghost2" fitHeight="25.0" fitWidth="23.0" layoutX="471.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/ghost-pacman2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ghost3" fitHeight="25.0" fitWidth="23.0" layoutX="471.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/ghost-pacman3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ghost4" fitHeight="25.0" fitWidth="23.0" layoutX="108.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/ghost-pacman4.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

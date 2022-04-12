@@ -376,7 +376,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 NordOuest.setGraphic(new ImageView(image));
-                NordOuest.setStyle("-fx-background-color:#0000B0;");
+                NordOuest.setStyle("-fx-background-color: #77dd77;");
                 NordOuest.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[0][0]=-1;
@@ -386,7 +386,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 Nord.setGraphic(new ImageView(image));
-                Nord.setStyle("-fx-background-color:#0000B0;");
+                Nord.setStyle("-fx-background-color:#77dd77;");
                 Nord.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[0][1]=-1;
@@ -396,7 +396,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 NordEst.setGraphic(new ImageView(image));
-                NordEst.setStyle("-fx-background-color:#0000B0;");
+                NordEst.setStyle("-fx-background-color:#77dd77;");
                 NordEst.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[0][2]=-1;
@@ -406,7 +406,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 Ouest.setGraphic(new ImageView(image));
-                Ouest.setStyle("-fx-background-color:#0000B0;");
+                Ouest.setStyle("-fx-background-color:#77dd77;");
                 Ouest.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[1][0]=-1;
@@ -416,7 +416,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 Centre.setGraphic(new ImageView(image));
-                Centre.setStyle("-fx-background-color:#0000B0;");
+                Centre.setStyle("-fx-background-color:#77dd77;");
                 Centre.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[1][1]=-1;
@@ -426,7 +426,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 Est.setGraphic(new ImageView(image));
-                Est.setStyle("-fx-background-color:#0000B0;");
+                Est.setStyle("-fx-background-color:#77dd77;");
                 Est.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[1][2]=-1;
@@ -436,7 +436,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 SudOuest.setGraphic(new ImageView(image));
-                SudOuest.setStyle("-fx-background-color:#0000B0;");
+                SudOuest.setStyle("-fx-background-color:#77dd77;");
                 SudOuest.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[2][0]=-1;
@@ -446,7 +446,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 Sud.setGraphic(new ImageView(image));
-                Sud.setStyle("-fx-background-color:#0000B0;");
+                Sud.setStyle("-fx-background-color:#77dd77;");
                 Sud.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[2][1]=-1;
@@ -456,7 +456,7 @@ public class ControllerjeuContreIA {
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);
                 SudEst.setGraphic(new ImageView(image));
-                SudEst.setStyle("-fx-background-color:#0000B0;");
+                SudEst.setStyle("-fx-background-color:#77dd77;");
                 SudEst.setDisable(false);
                 tourdecider.setText("C'est au tour du Joueur 1");
                 GameBoard[2][2]=-1;
