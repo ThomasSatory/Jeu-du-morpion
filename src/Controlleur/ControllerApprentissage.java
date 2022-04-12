@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.lang.invoke.SwitchPoint;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -114,18 +115,22 @@ public class ControllerApprentissage {
                 updateMessage("Apprentissage fini !");
                 String file ="resources/models/MLP-"+h+"-"+lr+"-"+l+".srl";
                 net.save(file);
-                Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
-                stage= (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene=new Scene(root);
-                stage.setScene(scene);
-                stage.setTitle("Jeu Contre IA");
-                stage.show();
+                SwitchToGame(event);
                 return null;
             }
         };
         progress.progressProperty().bind(task.progressProperty());
         console.textProperty().bind(task.messageProperty());
         new Thread(task).start();
+    }
+
+    public void SwitchToGame(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
+        stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Jeu Contre IA");
+        stage.show();
     }
 }
 

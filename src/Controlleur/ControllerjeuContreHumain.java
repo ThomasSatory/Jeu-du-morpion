@@ -3,6 +3,7 @@ package Controlleur;
 import Vue.ViewMenu;
 import Vue.ViewjeuContreHumain;
 import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,6 +73,15 @@ public class ControllerjeuContreHumain {
     @FXML
     protected Button Retour = new Button();
 
+    @FXML
+    protected  ImageView ghost = new ImageView();
+
+
+    @FXML
+    protected  ImageView ghost2 = new ImageView();
+
+
+
     private Stage stage;
     private Scene scene;
 
@@ -84,6 +94,8 @@ public class ControllerjeuContreHumain {
 
     public FadeTransition fade1;
     public FadeTransition fade2;
+    public TranslateTransition translate;
+    public TranslateTransition translate2;
 
     public void initialize(){
         GameBoard=FillGameBoard();
@@ -94,8 +106,22 @@ public class ControllerjeuContreHumain {
         tourdecider.setVisible(true);
         tourdecider.setText("C'est au tour du Joueur 1");
         Transitionplayer1();
+        Transition();
     }
 
+    public void Transition(){
+        translate=new TranslateTransition(Duration.millis(2000), ghost);
+        translate.setByY(155.00);
+        translate.setAutoReverse(true);
+        translate.setCycleCount(30);
+        translate.play();
+
+        translate2=new TranslateTransition(Duration.millis(2000), ghost2);
+        translate2.setByY(143.00);
+        translate2.setAutoReverse(true);
+        translate2.setCycleCount(30);
+        translate2.play();
+    }
     public void Transitionplayer1(){
         fade1 = new FadeTransition(Duration.seconds(1),player1rectangle);
         fade1.setFromValue(.80);

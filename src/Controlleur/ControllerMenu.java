@@ -14,6 +14,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -26,6 +28,12 @@ import java.util.List;
 
 
 public class ControllerMenu {
+    @FXML
+    public Button stop;
+
+    @FXML
+    public Button play;
+
     @FXML
     private Button JouerContreIA = new Button();
 
@@ -73,11 +81,13 @@ public class ControllerMenu {
     public TranslateTransition translate3 ;
     public TranslateTransition translate4 ;
 
+    public MediaPlayer mediaPlayer;
 
 
     public void initialize(){
         Difficulte.setVisible(false);
         Translation();
+        stop.setVisible(false);
     }
 
     public void Translation(){
@@ -333,6 +343,25 @@ public class ControllerMenu {
     protected void onDifficile() throws IOException{
         Facile.setSelected(false);
         Moyen.setSelected(false);
+    }
+
+    @FXML
+    public void playMusique(ActionEvent event) {
+        String s = "resources/musique.mp3";
+        Media h = new Media(Paths.get(s).toUri().toString());
+        mediaPlayer = new MediaPlayer(h);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(0.1);
+        mediaPlayer.play();
+        play.setVisible(false);
+        stop.setVisible(true);
+    }
+
+    @FXML
+    public void stopMusique(ActionEvent event) {
+        mediaPlayer.stop();
+        play.setVisible(true);
+        stop.setVisible(false);
     }
 }
 

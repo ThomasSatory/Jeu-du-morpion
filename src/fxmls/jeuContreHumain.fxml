@@ -80,5 +80,15 @@
                <Image url="@../../resources/images/sus.png" />
            </image>
        </ImageView>
+       <ImageView fx:id="ghost" fitHeight="25.0" fitWidth="23.0" layoutX="52.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../../resources/images/ghost-pacman.png" />
+           </image>
+       </ImageView>
+       <ImageView fx:id="ghost2" fitHeight="25.0" fitWidth="23.0" layoutX="525.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../../resources/images/ghost-pacman2.png" />
+           </image>
+       </ImageView>
    </children>
 </AnchorPane>
