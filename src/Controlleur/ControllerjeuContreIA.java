@@ -33,6 +33,9 @@ public class ControllerjeuContreIA {
     public Label tourdecider = new Label();
 
     @FXML
+    public ImageView vs = new ImageView();
+
+    @FXML
     protected Button NordOuest = new Button();
 
     @FXML
@@ -213,25 +216,6 @@ public class ControllerjeuContreIA {
         boolean winplayer2=false;
         int verifegalite=0;
 
-        for (int i = 0; i < 3; i++) { //verification égalité
-            for (int j = 0; j < 3; j++) {
-                if (GameBoard[i][j] != 0) {
-                    verifegalite += 1;
-                }
-            }
-        }
-        if(verifegalite==9){
-            egalite=true;
-        }
-
-        if (egalite == true){
-            Fin.setVisible(true);
-            tourdecider.setVisible(false);
-            Retour.setVisible(true);
-            Rejouer.setVisible(true);
-            Fin.setText("Il y a égalité");
-            return true;
-        }
 
         for (int i = 0; i < 3; i++) {
             if (GameBoard[i][0] == 1 && GameBoard[i][1] == 1 && GameBoard[i][2] == 1) {//faire les lignes
@@ -337,7 +321,9 @@ public class ControllerjeuContreIA {
             SudOuest.setDisable(true);
             Sud.setDisable(true);
             SudEst.setDisable(true);
+            vs.setVisible(false);
             Fin.setText("Le Joueur 1 a gagné");
+            return true;
         }
         if (winplayer2 == true){
             Fin.setVisible(true);
@@ -353,14 +339,39 @@ public class ControllerjeuContreIA {
             SudOuest.setDisable(true);
             Sud.setDisable(true);
             SudEst.setDisable(true);
+            vs.setVisible(false);
             Fin.setText("L'IA a gagné");
+            return true;
         }
+
+        for (int i = 0; i < 3; i++) { //verification égalité
+            for (int j = 0; j < 3; j++) {
+                if (GameBoard[i][j] != 0) {
+                    verifegalite += 1;
+                }
+            }
+        }
+        if(verifegalite==9){
+            egalite=true;
+        }
+
+        if (egalite == true){
+            Fin.setVisible(true);
+            tourdecider.setVisible(false);
+            Retour.setVisible(true);
+            Rejouer.setVisible(true);
+            vs.setVisible(false);
+            Fin.setText("Il y a égalité");
+            return true;
+        }
+
         return false;
     }
 
     public void IACoup() throws InterruptedException {
         int max = getMax();
-        if (tour==false){
+
+        if (tour==false && VerifGame() == false){
             if (max==0){
                 tour=true;
                 Image image= new Image(getClass().getResourceAsStream("/images/circle.png"),width-10,height-6,true,true);

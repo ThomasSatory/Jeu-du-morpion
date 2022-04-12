@@ -4,7 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="367.0" prefWidth="569.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerConfig">
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="367.0" prefWidth="569.0" style="-fx-background-color: #cfcfc4;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerConfig">
    <children>
       <TextField fx:id="h" layoutX="218.0" layoutY="284.0" prefHeight="25.0" prefWidth="50.0" />
       <TextField fx:id="lr" layoutX="332.0" layoutY="284.0" prefHeight="25.0" prefWidth="50.0" />
@@ -40,4 +42,14 @@
          </font>
       </Button>
    </children>
+   <ImageView fitHeight="75.0" fitWidth="68.0" layoutX="18.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../resources/images/susEst.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="54.0" fitWidth="68.0" layoutX="518.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../resources/images/sus.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
