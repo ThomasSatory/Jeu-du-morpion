@@ -305,6 +305,8 @@ public class ControllerjeuContreHumain {
             Rejouer.setVisible(true);
             fade2.stop();
             fade1.play();
+            rotate1.stop();
+            rotate2.stop();
             NordOuest.setDisable(true);
             Nord.setDisable(true);
             NordEst.setDisable(true);
@@ -323,7 +325,9 @@ public class ControllerjeuContreHumain {
             Retour.setVisible(true);
             Rejouer.setVisible(true);
             fade1.stop();
-            fade1.play();
+            fade2.play();
+            rotate1.stop();
+            rotate2.stop();
             NordOuest.setDisable(true);
             Nord.setDisable(true);
             NordEst.setDisable(true);
