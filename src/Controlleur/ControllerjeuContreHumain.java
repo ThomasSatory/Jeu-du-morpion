@@ -348,9 +348,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[0][0]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[0][0]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -360,9 +360,9 @@ public class ControllerjeuContreHumain {
             NordOuest.setDisable(false);
             GameBoard[0][0]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -379,9 +379,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[0][1]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[0][1]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -391,9 +391,9 @@ public class ControllerjeuContreHumain {
             Nord.setDisable(false);
             GameBoard[0][1]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -410,9 +410,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[0][2]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[0][2]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -422,9 +422,9 @@ public class ControllerjeuContreHumain {
             NordEst.setDisable(false);
             GameBoard[0][2]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -441,9 +441,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[1][0]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[1][0]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -453,9 +453,9 @@ public class ControllerjeuContreHumain {
             Ouest.setDisable(false);
             GameBoard[1][0]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -472,9 +472,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[1][2]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[1][2]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -484,9 +484,9 @@ public class ControllerjeuContreHumain {
             Est.setDisable(false);
             GameBoard[1][2]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -503,9 +503,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[2][2]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[2][2]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -515,9 +515,9 @@ public class ControllerjeuContreHumain {
             SudEst.setDisable(false);
             GameBoard[2][2]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -534,9 +534,9 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[2][1]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
         } else if(tour==false && GameBoard[2][1]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -546,9 +546,9 @@ public class ControllerjeuContreHumain {
             Sud.setDisable(false);
             GameBoard[2][1]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -565,9 +565,10 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[2][0]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
+
         } else if(tour==false && GameBoard[2][0]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -577,9 +578,10 @@ public class ControllerjeuContreHumain {
             SudOuest.setDisable(false);
             GameBoard[2][0]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
+
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
@@ -596,9 +598,10 @@ public class ControllerjeuContreHumain {
             tourdecider.setText("C'est au tour du Joueur 2");
             GameBoard[1][1]=1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade1.stop();
             Transitionplayer2();
+            VerifGame();
+
         } else if(tour==false && GameBoard[1][1]==0){
             tour=true;
             tourdecider.setText("C'est au tour du Joueur 1");
@@ -608,9 +611,10 @@ public class ControllerjeuContreHumain {
             Centre.setDisable(false);
             GameBoard[1][1]=-1;
             AfficherGameBoard(GameBoard);
-            VerifGame();
             fade2.stop();
             Transitionplayer1();
+            VerifGame();
+
         } else {
             Notification.setVisible(true);
             Notification.setText("Tu ne peux pas placer ici");
