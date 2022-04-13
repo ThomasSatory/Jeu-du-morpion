@@ -17,6 +17,7 @@ public class ViewModeleConfig extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 620, 380);
         stage.setTitle("Configuration du jeu");
         stage.getIcons().add(new Image(ViewModeleia.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

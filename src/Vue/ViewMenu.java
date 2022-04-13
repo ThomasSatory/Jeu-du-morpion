@@ -19,6 +19,7 @@ public class ViewMenu extends Application {
         Label Difficulte = (Label) scene.lookup("#Difficulte");
         Difficulte.setVisible(false);
         stage.getIcons().add(new Image(ViewMenu.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setTitle("Menu principal");
         stage.setScene(scene);
         stage.show();

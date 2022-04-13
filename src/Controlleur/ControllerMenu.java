@@ -107,25 +107,25 @@ public class ControllerMenu {
         translate=new TranslateTransition(Duration.millis(2000), ghost);
         translate.setByX(160.00);
         translate.setAutoReverse(true);
-        translate.setCycleCount(30);
+        translate.setCycleCount(100);
         translate.play();
 
         translate2=new TranslateTransition(Duration.millis(2000), ghost2);
         translate2.setByX(-160.00);
         translate2.setAutoReverse(true);
-        translate2.setCycleCount(30);
+        translate2.setCycleCount(100);
         translate2.play();
 
         translate3=new TranslateTransition(Duration.millis(2000), ghost3);
         translate3.setByX(-160.00);
         translate3.setAutoReverse(true);
-        translate3.setCycleCount(30);
+        translate3.setCycleCount(100);
         translate3.play();
 
         translate4=new TranslateTransition(Duration.millis(2000), ghost4);
         translate4.setByX(160.00);
         translate4.setAutoReverse(true);
-        translate4.setCycleCount(30);
+        translate4.setCycleCount(100);
         translate4.play();
     }
     @FXML
@@ -372,7 +372,7 @@ public class ControllerMenu {
 
     @FXML
     public void stopMusique(ActionEvent event) {
-        mediaPlayer.stop();
+        mediaPlayer.setMute(true);
         play.setVisible(true);
         stop.setVisible(false);
     }

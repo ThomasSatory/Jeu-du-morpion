@@ -16,6 +16,7 @@ public class ViewjeuContreHumain extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("Jeu Contre un Humain");
         stage.getIcons().add(new Image(ViewjeuContreHumain.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

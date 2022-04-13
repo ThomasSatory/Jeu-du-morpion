@@ -15,6 +15,7 @@ public class ViewRegles extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("Les Regles");
         stage.getIcons().add(new Image(ViewRegles.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

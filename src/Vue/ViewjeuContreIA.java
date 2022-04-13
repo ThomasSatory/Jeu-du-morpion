@@ -16,6 +16,7 @@ public class ViewjeuContreIA extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("Jeu Contre une IA");
         stage.getIcons().add(new Image(ViewjeuContreIA.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

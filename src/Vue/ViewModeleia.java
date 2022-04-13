@@ -17,6 +17,7 @@ public class ViewModeleia extends Application {
         Label Notif = (Label) scene.lookup("#Notif");
         Notif.setVisible(false);
         stage.getIcons().add(new Image(ViewModeleia.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setTitle("Modele IA");
         stage.setScene(scene);
         stage.show();

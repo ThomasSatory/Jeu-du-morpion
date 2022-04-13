@@ -15,6 +15,7 @@ public class ViewAbout extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 640, 480);
         stage.setTitle("About");
         stage.getIcons().add(new Image(ViewAbout.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

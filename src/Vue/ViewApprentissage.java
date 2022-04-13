@@ -14,6 +14,7 @@ public class ViewApprentissage extends Application {
         Scene scene=getScene();
         stage.setTitle("Apprentissage MLP");
         stage.getIcons().add(new Image(ViewApprentissage.class.getResourceAsStream("/images/susEst.png")));
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

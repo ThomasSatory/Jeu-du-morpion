@@ -3,6 +3,7 @@ package Controlleur;
 import Vue.ViewMenu;
 import Vue.ViewjeuContreHumain;
 import javafx.animation.FadeTransition;
+import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,6 +81,12 @@ public class ControllerjeuContreHumain {
     @FXML
     protected  ImageView ghost2 = new ImageView();
 
+    @FXML
+    private ImageView ratplayer1 = new ImageView();
+
+    @FXML
+    private  ImageView ratplayer2 = new ImageView();
+
 
 
     private Stage stage;
@@ -94,6 +101,8 @@ public class ControllerjeuContreHumain {
 
     public FadeTransition fade1;
     public FadeTransition fade2;
+    public RotateTransition rotate1;
+    public RotateTransition rotate2;
     public TranslateTransition translate;
     public TranslateTransition translate2;
 
@@ -129,6 +138,11 @@ public class ControllerjeuContreHumain {
         fade1.setCycleCount(FadeTransition.INDEFINITE);
         fade1.setAutoReverse(true);
         fade1.play();
+
+        rotate1 = new RotateTransition(Duration.millis(500), ratplayer1);
+        rotate1.setByAngle(360);
+        rotate1.setCycleCount(1);
+        rotate1.play();
     }
 
     public void Transitionplayer2(){
@@ -138,6 +152,11 @@ public class ControllerjeuContreHumain {
         fade2.setCycleCount(FadeTransition.INDEFINITE);
         fade2.setAutoReverse(true);
         fade2.play();
+
+        rotate2 = new RotateTransition(Duration.millis(500), ratplayer2);
+        rotate2.setByAngle(360);
+        rotate2.setCycleCount(1);
+        rotate2.play();
     }
 
 

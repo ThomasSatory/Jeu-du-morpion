@@ -55,12 +55,12 @@
             <Font name="Comic Sans MS" size="20.0" />
          </font>
       </Label>
-       <ImageView fitHeight="97.0" fitWidth="118.0" layoutX="4.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+       <ImageView fx:id="ratplayer1" fitHeight="97.0" fitWidth="118.0" layoutX="4.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@../../resources/images/ratplayer1.png" />
            </image>
       </ImageView>
-      <ImageView fitHeight="187.0" fitWidth="155.0" layoutX="459.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ratplayer2" fitHeight="187.0" fitWidth="155.0" layoutX="459.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/images/ratplayer2.png" />
          </image>
