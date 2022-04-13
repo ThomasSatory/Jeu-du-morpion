@@ -43,11 +43,19 @@ public class ControllerApprentissage {
     private Stage stage;
     private Scene scene;
 
+
+    /**
+     * Function : permet de lancer des instructions à la création de la vue
+     */
     public void initialize(){
         play.setVisible(false);
     }
 
-
+    /**
+     * Function : permet d'apprendre le modele et de le suavegarder au click sur le bouton
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onHelloButtonClick(ActionEvent event) throws IOException {
         startText.setText("Apprentissage en cours");
@@ -131,6 +139,11 @@ public class ControllerApprentissage {
         new Thread(task).start();
     }
 
+    /**
+     * Function : permet de switch entre la vue de l'apprentissage et celle du jeu au clic du bouton Jouer
+     * @param event
+     * @throws IOException
+     */
     public void SwitchToGame(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreIA.class.getResource("../fxmls/jeuContreIA.fxml"));
         stage= (Stage)((Node)event.getSource()).getScene().getWindow();

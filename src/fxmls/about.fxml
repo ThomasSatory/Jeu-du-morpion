@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #cfcfc4;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleur.ControllerAbout">
    <children>
       <Text layoutX="162.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jeu du Morpion fait avec JavaFx">
@@ -13,7 +12,7 @@
             <Font name="Comic Sans MS" size="18.0" />
          </font>
       </Text>
-      <TextArea layoutX="126.0" layoutY="123.0" prefHeight="200.0" prefWidth="348.0" text="Jeu du morpion fait en JavaFx permettant de jouer&#10; contre un humain ou une IA.&#10;&#10;IA que nous devont entrainer pour charger le modèle.">
+      <TextArea layoutX="126.0" layoutY="123.0" prefHeight="200.0" prefWidth="348.0" text="Jeu du morpion fait en JavaFx permettant de jouer&#10; contre un humain ou une IA, en choisissant le niveau &#10;de difficulté de l'IA&#10;IA que nous devont entrainer pour charger le modèle.&#10;Le theme de ce jeu est l'alliance du jeu Pacman et &#10;Among Us.&#10;&#10;Fait par Satory Thomas.">
          <font>
             <Font name="Comic Sans MS" size="13.0" />
          </font>

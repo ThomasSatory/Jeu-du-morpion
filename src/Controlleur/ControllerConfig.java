@@ -53,12 +53,19 @@ public class ControllerConfig {
     private Stage stage;
     private Scene scene;
 
+    /**
+     * Function : permet de lancer des opérations à la création de la vue
+     * @throws IOException
+     */
     public void initialize() throws IOException {
         Notif.setVisible(false);
         ShowMLPs();
     }
 
-
+    /**
+     * Function : permet de mettre a jour la ListView contenant les configs
+     * @throws IOException
+     */
     @FXML
     protected void ShowMLPs() throws IOException {
         Path path = Paths.get("resources/config.txt");
@@ -69,6 +76,10 @@ public class ControllerConfig {
     }
 
 
+    /**
+     * Function : permet de changer les valeurs des configs
+     * @throws IOException
+     */
     @FXML
     protected void onChanger() throws IOException {
         String htext= h.getText();
@@ -131,6 +142,12 @@ public class ControllerConfig {
         ShowMLPs();
     }
 
+
+    /**
+     * Function : permet de retourner au menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRetour(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/menu.fxml"));
