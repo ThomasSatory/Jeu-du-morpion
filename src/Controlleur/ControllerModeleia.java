@@ -33,6 +33,9 @@ public class ControllerModeleia {
         ShowMLPs();
     }
 
+    /**
+     * Met la liste des modele dans la ListeView MLP
+     */
     @FXML
     protected void ShowMLPs(){
         File repertoire = new File("resources/models");
@@ -42,6 +45,9 @@ public class ControllerModeleia {
         MLP.refresh();
     }
 
+    /**
+     * Suppression du modele à l'appui du bouton Supprimer
+     */
     @FXML
     protected void onSupprimer(){
         String Fichier=MLP.getSelectionModel().getSelectedItem();
@@ -58,6 +64,11 @@ public class ControllerModeleia {
         ShowMLPs();
     }
 
+    /**
+     * Retourner au menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRetour(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/menu.fxml"));

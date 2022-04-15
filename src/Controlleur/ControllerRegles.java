@@ -16,6 +16,11 @@ public class ControllerRegles {
     private Stage stage;
     private Scene scene;
 
+    /**
+     * Retourner au menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRetour(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/menu.fxml"));

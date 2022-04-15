@@ -1,12 +1,9 @@
 package Controlleur;
 
 import Vue.*;
-import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,7 +14,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -25,7 +21,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -98,11 +93,9 @@ public class ControllerMenu {
         stop.setGraphic(new ImageView(image));
     }
 
-    public void setButtons(ActionEvent event){
-
-    }
-
-
+    /**
+     * Animation des petits fantomes dans le fond
+     */
     public void Translation(){
         translate=new TranslateTransition(Duration.millis(2000), ghost);
         translate.setByX(160.00);
@@ -128,6 +121,12 @@ public class ControllerMenu {
         translate4.setCycleCount(100);
         translate4.play();
     }
+
+    /**
+     * onClick du bouton on lance le Jeu contre l'IA en verifiant si il faut apprendre le modele ou pas
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onJouerContreIA(ActionEvent event) throws IOException {
         Path path = Paths.get("resources/config.txt");
@@ -215,6 +214,14 @@ public class ControllerMenu {
         }
     }
 
+    /**
+     * Verification de la config avec les modeles existant
+     * @param h
+     * @param lr
+     * @param l
+     * @return un bool si c'est le meme true ou pas false
+     * @throws IOException
+     */
     protected boolean VerifConfig(int h,double lr,int l) throws IOException {
         List ListeFichiers=FichiersConfig();
 
@@ -238,7 +245,11 @@ public class ControllerMenu {
         return false;
     }
 
-    protected List FichiersConfig() throws IOException {
+    /**
+     * Liste les modeles sous forme de liste
+     * @return liste des modeles
+     */
+    protected List FichiersConfig() {
         File repertoire = new File("resources/models");
         String[] liste = repertoire.list();
         int n = liste.length;
@@ -252,7 +263,11 @@ public class ControllerMenu {
         return ListFichiers;
     }
 
-
+    /**
+     * onClick de jouer contre Humain on lance une partie en lancant la vue
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onJouerContreHumain(ActionEvent event) throws IOException{
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreHumain.fxml"));
@@ -263,8 +278,12 @@ public class ControllerMenu {
         stage.show();
     }
 
+    /**
+     * Lance la vue du modeleIA
+     * @throws IOException
+     */
     @FXML
-    protected void onModeleIA(ActionEvent event) throws IOException  {
+    protected void onModeleIA() throws IOException  {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../fxmls/modeleia.fxml"));
         Parent ReportManager = loader.load();
@@ -278,6 +297,11 @@ public class ControllerMenu {
         window.show();
     }
 
+    /**
+     * Lance la vue de la configuration
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onConfiguration(ActionEvent event) throws IOException  {
         FXMLLoader loader = new FXMLLoader();
@@ -293,6 +317,11 @@ public class ControllerMenu {
         window.show();
     }
 
+    /**
+     * Lance la vue des regles
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onRegles(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -308,7 +337,11 @@ public class ControllerMenu {
         window.show();
     }
 
-
+    /**
+     * Lance la vue about
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onAbout(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -324,6 +357,11 @@ public class ControllerMenu {
         window.show();
     }
 
+    /**
+     * Lance la vue des Regles
+     * @param event
+     * @throws IOException
+     */
     @FXML
     protected void onHelp(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -358,6 +396,10 @@ public class ControllerMenu {
         Moyen.setSelected(false);
     }
 
+    /**
+     * Met en marche la musique
+     * @param event
+     */
     @FXML
     public void playMusique(ActionEvent event) {
         String s = "resources/musique.mp3";
@@ -370,6 +412,10 @@ public class ControllerMenu {
         stop.setVisible(true);
     }
 
+    /**
+     * Stoppe la musique
+     * @param event
+     */
     @FXML
     public void stopMusique(ActionEvent event) {
         mediaPlayer.setMute(true);

@@ -1,6 +1,5 @@
 package Controlleur;
 
-import Vue.ViewMenu;
 import Vue.ViewjeuContreHumain;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
@@ -19,7 +18,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.crypto.spec.PSource;
 import java.io.IOException;
 
 public class ControllerjeuContreHumain {
@@ -106,6 +104,10 @@ public class ControllerjeuContreHumain {
     public TranslateTransition translate;
     public TranslateTransition translate2;
 
+
+    /**
+     * Function : permet de lancer des instructions à la création de la vue
+     */
     public void initialize(){
         GameBoard=FillGameBoard();
         Retour.setVisible(false);
@@ -118,6 +120,9 @@ public class ControllerjeuContreHumain {
         Transition();
     }
 
+    /**
+     * Function : Genere la transition des petits fantomes sur les côtés
+     */
     public void Transition(){
         translate=new TranslateTransition(Duration.millis(2000), ghost);
         translate.setByY(155.00);
@@ -131,6 +136,10 @@ public class ControllerjeuContreHumain {
         translate2.setCycleCount(30);
         translate2.play();
     }
+
+    /**
+     * Function : Genere la transition du joueur 1
+     */
     public void Transitionplayer1(){
         fade1 = new FadeTransition(Duration.seconds(1),player1rectangle);
         fade1.setFromValue(.80);
@@ -145,6 +154,9 @@ public class ControllerjeuContreHumain {
         rotate1.play();
     }
 
+    /**
+     * Function : Genere la transition du joueur 2
+     */
     public void Transitionplayer2(){
         fade2 = new FadeTransition(Duration.seconds(1),player2rectangle);
         fade2.setFromValue(.80);
@@ -159,7 +171,10 @@ public class ControllerjeuContreHumain {
         rotate2.play();
     }
 
-
+    /**
+     * Function: Initialise le plateau de jeu
+     * @return Le plateau de jeu initialisé à 0
+     */
     public int[][] FillGameBoard(){
         GameBoard = new int[3][3];
         for (int i = 0; i < 3; i++) {
@@ -171,6 +186,10 @@ public class ControllerjeuContreHumain {
         return GameBoard;
     }
 
+    /**
+     * Function: Affiche le plateau du jeu
+     * @param GameBoard plateau du jeu
+     */
     public void AfficherGameBoard(int[][] GameBoard){
         System.out.println(" -------- ");
         for (int i = 0; i < 3; i++) {
@@ -181,6 +200,9 @@ public class ControllerjeuContreHumain {
         }
     }
 
+    /**
+     * Function: verifie à tout instant si un des joueur a gagné ou si il y a égalité
+     */
     public void VerifGame(){
         boolean egalite=false;
         boolean winplayer1=false;
@@ -277,7 +299,7 @@ public class ControllerjeuContreHumain {
             SudOuest.setStyle("-fx-background-color: #ff0000");
         }
 
-        for (int i = 0; i < 3; i++) { //verification égalité
+        for (int i = 0; i < 3; i++) { //verification égalité , si il y a 9 pions posés et pas de vainqueur
             for (int j = 0; j < 3; j++) {
                 if (GameBoard[i][j] != 0) {
                     verifegalite += 1;
@@ -341,6 +363,10 @@ public class ControllerjeuContreHumain {
             Fin.setText("Le Joueur 2 a gagné");
         }
     }
+
+    /**
+     * onClick de la case en Nord-Ouest on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNordOuest() {
         if(tour==true && GameBoard[0][0]==0){
@@ -372,6 +398,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Nord on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNord(){
         if(tour==true && GameBoard[0][1]==0){
@@ -403,6 +432,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Nord-Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNordEst(){
         if(tour==true && GameBoard[0][2]==0){
@@ -434,6 +466,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Ouest on rempli la case avec le pion du joueur
+     */
     @FXML
     public void  onOuest(){
         if(tour==true && GameBoard[1][0]==0){
@@ -465,6 +500,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onEst(){
         if(tour==true && GameBoard[1][2]==0){
@@ -496,6 +534,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Sud-Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSudEst(){
         if(tour==true && GameBoard[2][2]==0){
@@ -527,6 +568,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Sud on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSud(){
         if(tour==true && GameBoard[2][1]==0){
@@ -558,6 +602,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case en Sud-Ouest on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSudOuest(){
         if(tour==true && GameBoard[2][0]==0){
@@ -591,6 +638,9 @@ public class ControllerjeuContreHumain {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Centre on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onCentre(){
         if(tour==true && GameBoard[1][1]==0){
@@ -626,7 +676,11 @@ public class ControllerjeuContreHumain {
     }
 
 
-
+    /**
+     * onClick du bouton on relance une partie
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRejouer(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreHumain.fxml"));
@@ -637,7 +691,11 @@ public class ControllerjeuContreHumain {
         stage.show();
     }
 
-
+    /**
+     * onClick du bouton on retourne au menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRetour(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/menu.fxml"));

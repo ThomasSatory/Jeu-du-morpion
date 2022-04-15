@@ -96,7 +96,10 @@ public class ControllerjeuContreIA {
     public TranslateTransition translate;
     public TranslateTransition translate2;
 
-
+    /**
+     * Methode lancée à la création de la vue
+     * @throws IOException
+     */
     public void initialize() throws IOException {
         GameBoard=FillGameBoard();
         Retour.setVisible(false);
@@ -112,6 +115,9 @@ public class ControllerjeuContreIA {
         tourdecider.setText("C'est au tour du Joueur 1");
     }
 
+    /**
+     * Transitions des fantômes
+     */
     public void Transition(){
         translate=new TranslateTransition(Duration.millis(2000), ghost);
         translate.setByY(155.00);
@@ -126,6 +132,10 @@ public class ControllerjeuContreIA {
         translate2.play();
     }
 
+    /**
+     * Mettre au bon format le plateau de jeu pour correspondre avec celui donné en sortie de l'IA
+     * @return
+     */
     public double[] transformBoard(){
         double[] output = null;
         output = new double[9];
@@ -149,12 +159,20 @@ public class ControllerjeuContreIA {
         }
     }
 
+    /**
+     * Genere la matrice de coup de l'IA
+     * @return
+     */
     public double[] IAplay(){
         double[] sortie= MLP.forwardPropagation(output);
         return sortie;
     }
 
-
+    /**
+     * Load le modele en fonction de la difficulté choisie
+     * @return
+     * @throws IOException
+     */
     private MultiLayerPerceptron LoadMLP() throws IOException {
         int h;
         int l;
@@ -177,7 +195,6 @@ public class ControllerjeuContreIA {
             h=Integer.parseInt(modesplitted[1]);
             lr=Double.parseDouble(modesplitted[2]);
             l=Integer.parseInt(modesplitted[3]);
-            System.out.println(l+" "+lr+" "+h);
         }else if (Difficulté==3){
             String mode=lines.get(2);
             String modesplitted[]=mode.split(":");
@@ -202,6 +219,10 @@ public class ControllerjeuContreIA {
         return MLP;
     }
 
+    /**
+     * Avoir le max de la matrice donnée en sortie de la ForwardPropagation
+     * @return
+     */
     public int getMax(){
         int imax = 0;
         double max=0;
@@ -216,6 +237,10 @@ public class ControllerjeuContreIA {
         return imax;
     }
 
+    /**
+     * Initialiser le plateau de jeu
+     * @return
+     */
     public double[][] FillGameBoard(){
         GameBoard = new double[3][3];
         for (int i = 0; i < 3; i++) {
@@ -237,6 +262,10 @@ public class ControllerjeuContreIA {
         }
     }
 
+    /**
+     * Verifier a tout instant si un joueur a gagné ou il y a égalité
+     * @return
+     */
     public boolean VerifGame(){
         boolean egalite=false;
         boolean winplayer1=false;
@@ -395,7 +424,10 @@ public class ControllerjeuContreIA {
         return false;
     }
 
-    public void IACoup() throws InterruptedException {
+    /**
+     * Fait jouer l'IA en aappelant les autres fonctions et en verifiant si la case choisie est libre
+     */
+    public void IACoup() {
         int max = getMax();
 
         if (tour==false && VerifGame() == false){
@@ -493,7 +525,9 @@ public class ControllerjeuContreIA {
         }
     }
 
-
+    /**
+     * onClick de la case au Nord-Ouest on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNordOuest() throws InterruptedException {
         if(tour==true && GameBoard[0][0]==0){
@@ -512,6 +546,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Nord on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNord() throws InterruptedException {
         if(tour==true && GameBoard[0][1]==0){
@@ -530,6 +567,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Nord-Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onNordEst() throws InterruptedException {
         if(tour==true && GameBoard[0][2]==0){
@@ -548,6 +588,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Ouest on rempli la case avec le pion du joueur
+     */
     @FXML
     public void  onOuest() throws InterruptedException {
         if(tour==true && GameBoard[1][0]==0){
@@ -566,6 +609,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onEst() throws InterruptedException {
         if(tour==true && GameBoard[1][2]==0){
@@ -584,6 +630,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Sud-Est on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSudEst() throws InterruptedException {
         if(tour==true && GameBoard[2][2]==0){
@@ -602,6 +651,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Sud on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSud() throws InterruptedException {
         if(tour==true && GameBoard[2][1]==0){
@@ -620,6 +672,9 @@ public class ControllerjeuContreIA {
             Notification.setText("Tu ne peux pas placer ici");
         }
     }
+    /**
+     * onClick de la case au Centre on rempli la case avec le pion du joueur
+     */
     @FXML
     public void onSudOuest() throws InterruptedException {
         if(tour==true && GameBoard[2][0]==0){
@@ -658,7 +713,11 @@ public class ControllerjeuContreIA {
     }
 
 
-
+    /**
+     * onClick du bouton on relance une partie
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRejouer(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/jeuContreIA.fxml"));
@@ -669,7 +728,11 @@ public class ControllerjeuContreIA {
         stage.show();
     }
 
-
+    /**
+     * onClick du bouton on retourne au menu
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void onRetour(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(ViewjeuContreHumain.class.getResource("../fxmls/menu.fxml"));
